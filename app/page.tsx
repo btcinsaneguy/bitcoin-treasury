@@ -26,6 +26,7 @@ const getLoadingRows = (displayLength: number) => [
   { value: "", length: displayLength },
   { value: "", length: displayLength },
   { value: "", length: displayLength },
+  { value: "", length: displayLength },
 ];
 
 function HomeContent() {
