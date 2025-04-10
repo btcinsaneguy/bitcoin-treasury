@@ -1,8 +1,8 @@
 "use client";
 
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { SolariBoard } from "./components/solari/SolariBoard";
-import { useState, useEffect, useMemo, useRef, Suspense } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
 // import { useDisplayLength } from "./components/useDisplayLength";
 
 function formatCurrency(number: number, locale = "en-US", currency = "USD") {
@@ -64,7 +64,8 @@ function HomeContent() {
         priceDirection ? ` ${priceDirection}` : ""
       }`;
 
-  const holdingDisplay = error ? "Error" : formatCurrency(holdingValue);
+  const holdingDisplay = error ? "Error" : `${holding.toLocaleString("en-US")}`;
+  const holdingValueDisplay = error ? "Error" : formatCurrency(holdingValue);
 
   // Define the final board rows
   const finalBoardRows = useMemo(
@@ -72,14 +73,15 @@ function HomeContent() {
       { value: "", length: displayLength },
       { value: ` ${ticker}`, length: displayLength },
       { value: "", length: displayLength },
-      { value: " TOTAL HOLDING", length: displayLength },
-      { value: ` ${holdingDisplay}`, length: displayLength },
+      { value: " TOTAL HOLDINGS", length: displayLength },
+      { value: ` BTC ${holdingDisplay}`, length: displayLength },
+      { value: ` ${holdingValueDisplay}`, length: displayLength },
       { value: "", length: displayLength },
       { value: " BTC PRICE", length: displayLength },
       { value: ` ${displayValue}`, length: displayLength },
       { value: "", length: displayLength },
     ],
-    [ticker, holdingDisplay, displayValue, displayLength]
+    [ticker, holdingValueDisplay, holdingDisplay, displayValue, displayLength]
   );
 
   // Current board rows based on loading state and animation progress
