@@ -13,12 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="h-full">
       <body
-        className={`font-mono bg-black text-textStandard relative antialiased`}
+        className={`h-full font-mono bg-black text-textStandard relative antialiased`}
       >
         <ThemeProvider attribute="data-theme">
-          <div className="h-[calc(100vh-54px)] flex justify-center items-center">
+          <div className="h-full flex justify-center items-center">
             <main className="h-full">{children}</main>
           </div>
           <Footer />

@@ -69,7 +69,7 @@ export const Flap = React.memo<FlapProps>(
     }, [isHovered, animating, bottom, half, hoverDuration]);
 
     // Base flap classes
-    const flapBaseClasses = `absolute h-full w-full origin-center z-20 rounded-sm`;
+    const flapBaseClasses = `absolute h-full w-full origin-center z-20 rounded-sm leading-[0.9]`;
 
     // Top flap classes
     const topClasses = classNames(
@@ -103,12 +103,12 @@ export const Flap = React.memo<FlapProps>(
     // Hinge classes
     const hingeClasses = classNames(
       "w-full absolute left-0 top-1/2 -translate-y-1/2 z-30 h-[0.02em] bg-black",
-      "before:content-[''] before:absolute before:left-[20%] before:bg-black before:shadow-[0.5px_0_1px_rgba(0,0,0,0.15)]",
-      "after:content-[''] after:absolute after:left-[80%] after:bg-black after:shadow-[0.5px_0_1px_rgba(0,0,0,0.15)]",
+      "before:content-[''] before:absolute before:left-[20%] before:bg-black",
+      "after:content-[''] after:absolute after:left-[80%] after:bg-black",
       {
         "sm:before:w-[2px] sm:before:h-[16px] sm:after:w-[2px] sm:after:h-[16px] sm:before:top-[-6px] sm:after:top-[-6px]":
           true, // Default size for larger screens
-        "before:w-[1px] before:h-[8px] after:w-[1px] after:h-[8px] after:top-[-3px] before:top-[-3px]":
+        "before:w-[0.5px] before:h-[4px] after:w-[0.5px] after:h-[4px] after:top-[-1.5px] before:top-[-1.5px] before:shadow-none after:shadow-none":
           true, // Smaller size for mobile view
       }
     );
