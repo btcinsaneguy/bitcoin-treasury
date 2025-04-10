@@ -195,7 +195,7 @@ function HomeContent() {
         <SolariBoard rows={currentBoardRows} className="relative" />
       </div>
 
-      <div className="flex flex-rows w-full justify-between opacity-0 transition-opacity duration-300 animate-fadeIn">
+      <div className="flex flex-rows w-full justify-center opacity-0 transition-opacity duration-300 animate-fadeIn">
         {/* Status indicator */}
         <div className="flex items-center justify-center gap-2 text-zinc-400 mt-2 sm:mt-4">
           <div

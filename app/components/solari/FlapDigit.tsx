@@ -37,7 +37,7 @@ export const FlapDigit = React.memo<FlapDigitProps>(
 
     return (
       <div
-        className={`text-[#e1e1e1] bg-[#1a1a1a] relative inline-block h-[1em] font-mono text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[66px] border border-black leading-none text-center w-[1.3ch] rounded-sm ${
+        className={`text-[#e1e1e1] bg-[#1a1a1a] relative inline-block h-[1em] font-mono text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl border border-black text-center w-[1.3ch] min-w-[1ch] rounded-sm ${
           className || ""
         }`}
         style={containerStyle}
