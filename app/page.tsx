@@ -327,7 +327,7 @@ function HomeContent() {
     const validAddresses = bitcoinAddresses.filter(addr => addr.trim() !== "");
 
     if (validAddresses.length === 0) {
-      setInputError("적어도 하나의 비트코인 주소를 입력해주세요");
+      setInputError("Please enter at least one Bitcoin address");
       return;
     }
 
@@ -368,11 +368,11 @@ function HomeContent() {
         setHolding(totalBalance);
         setIsFormVisible(false);
       } else {
-        setInputError("모든 주소가 유효하지 않거나 데이터를 조회할 수 없습니다");
+        setInputError("Invalid addresses or no data available");
       }
     } catch (err) {
       console.error("Failed to fetch Bitcoin balance:", err);
-      setInputError("비트코인 잔액 조회에 실패했습니다. 주소를 확인하고 다시 시도해주세요.");
+      setInputError("Failed to fetch Bitcoin balance. Please check the addresses and try again.");
     }
 
     setIsFetching(false);
