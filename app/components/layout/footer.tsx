@@ -1,26 +1,26 @@
 import React from "react";
-import { Goose } from "../icons/goose";
+import { XIcon } from "../icons/x";
 
 const Footer = () => {
   return (
     <footer className="w-full fixed bottom-0 border-t border-[#1e1e1e] text-white py-2 text-sm sm:text-base">
       <div className="flex justify-center items-center h-full">
         <div className="flex flex-rows">
-          Made with{" "}
+          Made by{" "}
           <a
-            href="https://block.github.io/goose/"
+            href="https://x.com/nestedSegwit"
             target="_blank"
             className="flex flex-rows hover:underline"
           >
-            <Goose className="mx-1" /> codename goose
+            <XIcon className="mx-1" /> BTC에 미친 사나이
           </a>
           <span className="mx-2 sm:mx-4">|</span>
           <a
-            href="https://github.com/block/bitcoin-treasury/blob/main/DISCLAIMER.md"
+            href="https://blockchain.info/"
             target="_blank"
             className="hover:underline"
           >
-            Disclaimer
+            Powered by Blockchain.com API
           </a>
         </div>
       </div>

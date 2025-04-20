@@ -4,25 +4,25 @@ import "./styles/main.css";
 import Footer from "./components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Bitcoin Holdings",
+  title: "Bitcoin Balance Checker",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning className="h-full">
-      <body
-        className={`h-full font-mono bg-black text-textStandard relative antialiased`}
-      >
-        <ThemeProvider attribute="data-theme">
-          <div className="h-full flex justify-center items-center">
-            <main className="h-full">{children}</main>
-          </div>
-          <Footer />
-        </ThemeProvider>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body>
+        <main className="bg-black min-h-screen text-white flex flex-col items-center justify-center pb-24">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
